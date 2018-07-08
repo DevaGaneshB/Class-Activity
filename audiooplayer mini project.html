@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<meta charset=utf-8 />
+
+<title>AudioPlayer</title>
+
+<style>
+div.ex{ background-color:grey; border:2px solid black;}
+</style>
+
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+<script>
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#kar')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+                $('#bla')
+                    .attr('src', e.target.result)
+                    .width(450)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+
+</head>
+
+
+<script>
+
+function playAudio(option) { 
+   var sf=document.getElementById("bla");
+   switch(option)
+   {
+	case 1:sf.play();
+        break;
+
+	case 2:sf.pause(); 
+	break;
+
+	case 3:sf.pause();sf.currentTime = 0;
+	break;
+
+	case 4:sf.currentTime = sf.currentTime+10;
+ 	break;
+
+	case 5:sf.currentTime = sf.currentTime-10;
+   }
+} 
+ 
+
+</script>
+<body align="center">
+<br>
+<div class="ex">
+<div class="ex">
+  <input type='file' onchange="readURL(this);" />
+    <!--<img id="kar" src="#" alt="your image" />--><br>
+<audio id="bla"  alt="video"><source src="#" type="audio/mp3"></audio>
+<br>
+</div>
+
+<img src="img.png" width="300" height="300" border="5">
+<br>
+
+<button onClick="playAudio(1)">Play</button>
+<button onClick="playAudio(2)">Pause</button>
+<button onClick="playAudio(3)">Stop</button>
+<button onClick="playAudio(4)">Forwind</button>
+<button onClick="playAudio(5)">Rewind</button>
+
+
+</div>
+
+</body>
+</html>
