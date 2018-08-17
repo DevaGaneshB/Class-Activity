@@ -1,50 +1,7 @@
 package applet;
 
-
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
 /*
-	Set Graphics Color Example 
+	//Set Graphics Color Example 
 	This java example shows how to set graphics color using Java AWT Color class.
 */
  
@@ -64,7 +21,7 @@ import java.awt.event.*;
 */
  
  
-public class SetGraphicsColorExample extends Applet{
+public class setcolo extends Applet{
  
 	public void paint(Graphics g) {
 		/*
@@ -76,12 +33,12 @@ public class SetGraphicsColorExample extends Applet{
 		 */
 		
 		//this will create light blue color
-		Color customColor = new Color(10,10,255);
+		Color customColor = new Color(10,255,255);
 		
 		g.setColor(customColor);
 		g.drawLine(10,10,30,30);
 		
-		g.setColor(Color.red);
+		g.setColor(customColor);
 		g.fillRect(40,40,40,40);
 		
 		g.setColor(Color.green);

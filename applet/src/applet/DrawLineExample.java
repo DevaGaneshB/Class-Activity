@@ -13,7 +13,6 @@ package applet;
  
  
 import java.applet.Applet;
-import java.awt.Graphics;
 import java.awt.*; 
 import java.awt.event.*; 
  
@@ -32,7 +31,9 @@ public class DrawLineExample extends Applet{
 		
 		//this will draw a line between (10,10) and (50,50) coordinates. 
 		g.drawLine(100,100,500,500);
-		 g.setColor(Color.rgb(128,0,128));
+
+		Color customColor = new Color(128,0,128);
+		 g.setColor(customColor);
 		 
 		//draw vertical line
 		g.drawLine(10,50,10,100);
